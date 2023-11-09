@@ -161,12 +161,21 @@
   /**
    * Preloader
    */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
+// JavaScript para ocultar el preloader después de que la página se ha cargado completamente
+let preloader = document.getElementById('preloader');
+
+// Escucha el evento de carga completa de la ventana
+window.addEventListener('load', () => {
+  // Muestra el preloader
+  preloader.style.display = 'flex';
+
+  // Simula una demora (puedes quitar esto en tu implementación real)
+  setTimeout(() => {
+    // Oculta el preloader después de un tiempo (simulado)
+    preloader.style.display = 'none';
+  }, 3000); // Cambia esto a la duración real de tu animación
+});
+
 
   /**
    * Porfolio isotope and filter
